@@ -1,0 +1,57 @@
+body.violet-bg {
+    background-color: #8558bf;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background: #6a3fa3;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.center-text {
+    text-align: center;
+    margin-top: 100px;
+}
+.center-text h1 {
+    font-size: 48px;
+}
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+input, select, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+button {
+    background-color: #fff;
+    color: #8558bf;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #ddd;
+}
+ul li {
+    background: rgba(255,255,255,0.2);
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+}

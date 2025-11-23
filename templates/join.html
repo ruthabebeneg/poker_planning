@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Rejoindre une session</title>
+    <link rel='stylesheet' href='{{ url_for("static", filename="styles.css") }}'>
+</head>
+<body class='violet-bg'>
+    <nav class='navbar'>
+        <a href='/create'>Créer une session</a>
+        <a href='/join'>Rejoindre une session</a>
+    </nav>
+    <div class='container'>
+        <h1>Rejoindre une session</h1>
+        <form method='post'>
+            <input type='text' name='code' placeholder='Code session' required>
+            <input type='text' name='name' placeholder='Votre pseudo' required>
+            <button type='submit'>Rejoindre</button>
+        </form>
+    </div>
+</body>
+</html>
