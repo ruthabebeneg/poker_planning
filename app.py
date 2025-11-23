@@ -7,7 +7,8 @@ app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # Nécessaire pour utiliser session
 
 # Initialisation Firebase
-cred = credentials.Certificate('poker-planning-2bbab-firebase-adminsdk-fbsvc-fe33ac5269.json')  # Remplace par ton fichier clé Firebase
+
+firebase_key = json.loads(os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON"))
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -104,3 +105,4 @@ def vote(session_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
