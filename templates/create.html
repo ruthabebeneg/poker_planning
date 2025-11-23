@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Créer une session</title>
+    <link rel='stylesheet' href='{{ url_for("static", filename="styles.css") }}'>
+</head>
+<body class='violet-bg'>
+    <nav class='navbar'>
+        <a href='/create'>Créer une session</a>
+        <a href='/join'>Rejoindre une session</a>
+    </nav>
+    <div class='container'>
+        <h1>Créer une session</h1>
+        <form method='post'>
+            <input type='text' name='organizer' placeholder='Votre pseudo' required>
+            <select name='difficulty' required>
+                <option value='Facile'>Facile</option>
+                <option value='Moyenne'>Moyenne</option>
+                <option value='Difficile'>Difficile</option>
+            </select>
+            <input type='number' name='rounds' placeholder='Nombre de tours' required>
+            <div id='stories'>
+                <input type='text' name='userStories' placeholder='User Story'>
+            </div>
+            <button type='button' onclick='addStory()'>Ajouter une User Story</button>
+            <button type='submit'>Créer la session</button>
+        </form>
+    </div>
+    <script>
+        function addStory(){
+            let div = document.getElementById('stories');
+            let input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'userStories';
+            input.placeholder = 'User Story';
+            div.appendChild(input);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Vote</title>
+    <link rel='stylesheet' href='{{ url_for("static", filename="styles.css") }}'>
+</head>
+<body class='violet-bg'>
+    <nav class='navbar'>
+        <a href='/create'>Créer une session</a>
+        <a href='/join'>Rejoindre une session</a>
+    </nav>
+    <div class='container'>
+        <h1>Phase de vote</h1>
+        <h3>User Stories :</h3>
+        <ul>
+            {% for story in session.userStories %}
+                <li>{{ story }}</li>
+            {% endfor %}
+        </ul>
+        <form method='post'>
+            <select name='vote'>
+                <option>1</option><option>2</option><option>3</option>
+                <option>5</option><option>8</option><option>13</option>
+            </select>
+            <button type='submit'>Voter</button>
+        </form>
+        <h3>Votes :</h3>
+        <ul>
+            {% for p in participants %}
+                <li>{{ p.name }} : {{ p.vote }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
