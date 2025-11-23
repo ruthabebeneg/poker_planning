@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Salle d'attente</title>
+    <link rel='stylesheet' href='{{ url_for("static", filename="styles.css") }}'>
+</head>
+<body class='violet-bg'>
+    <nav class='navbar'>
+        <a href='/create'>Créer une session</a>
+        <a href='/join'>Rejoindre une session</a>
+    </nav>
+    <div class='container'>
+        <h1>Salle d'attente</h1>
+        <p>Code de session : {{ session_id }}</p>
+        <h3>Participants :</h3>
+        <ul>
+            {% for p in participants %}
+                <li>{{ p.name }}</li>
+            {% endfor %}
+        </ul>
+        {% if session.organizer == current_user %}
+        <form method='post' action='{{ url_for("start", session_id=session_id) }}'>
+            <button>Lancer la partie</button>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
